@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>keknei</title>
+<link rel="stylesheet" href="stylesheets/base.css" />
+<link rel="stylesheet" href="stylesheets/animate.css"> 
+<link rel="stylesheet" href="stylesheets/swiper.min.css">
+   
+<style>
+html,body{
+	height:100%;
+	overflow: hidden;
+}
+.swiper-container{
+	height:100%;
+}
+.swiper-slide{
+	height:100%;
+}
+
+.header{
+	width:100%;
+	-height:666px;
+	background:url("images/index.jpg") no-repeat center;
+	background-size:cover;
+	position:relative;
+}
+.header_top{height:70px;
+	width:100%;
+	background:#333030;
+	
+}
+.header_nav{
+	position:relative;
+	float:right;
+	margin-top:25px;
+	margin-right:100px;
+}
+.header_nav li{
+	position:relative;
+	z-index:2;
+	float:left;
+	text-align:center;
+	line-height:30px;
+	width:80px;height:30px;
+}
+.header_nav li:hover a{color:#ffc10e;}
+.header_nav .header_box{position:absolute;top:0;left:0;width:80px;height:30px;background:#000;z-index:1;}
+.header_nav a{
+	font-size:16px;
+	font-weight:bold;
+	font-family:'Microsoft Yahei';
+	color:#fff;
+}
+.header_date{position:relative;}
+.header_date ul { position:absolute; top:18px; left:10%; width:192px; }
+.header_date li { overflow:hidden; position:relative; float:left; list-style:none; width:24px; height:35px; text-align:center; line-height:35px; font-weight:bold; font-size:30px; color:#FFF;border-radius:25%;}
+.header_date span { position:absolute; top:0; left:0; width:100%; height:350px; background:url(images/num.png) no-repeat; }
+
+.header_center{position:absolute;width:100%;height:100%;left:0;top:0;}
+.header_center a{color:#FFF;}
+.h_btn_left,.h_btn_right{width:140px;height:40px;position:absolute;border:1px solid #FFF;left:35%;top:70%;text-align:center;line-height:40px;font-size:20px;font-family:'Microsoft Yahei';cursor:pointer;}
+.h_btn_right{left:57%;}
+.header_title{position:absolute;width:440px;left:50%;top:50%;margin-top:50px;margin-left:-205px;text-align:center;font-size:36px;color:#FFF;border-bottom:1px solid #fff;padding-bottom:15px;font-weight:bold;}
+.h_center_img{position:absolute;width:200px;height:200px;left:50%;top:50%;margin-left:-100px;margin-top:-200px;background:url(images/center.png) no-repeat;background-size:100% 100%;border-radius:50%;border:10px solid #fff;transition:1s all ease;transform:perspective(1200px) rotateY(0deg);}
+.h_center_img:hover{transform:perspective(1200px) rotateY(360deg);}
+
+.header_center span{position:absolute;background:#fff;opacity:0;transition:1s all ease;}
+
+.d_btn_top{left:-150px;width:50px;height:2px;top:0;}
+.h_btn_left:hover .d_btn_top{top:0;left:0;width:140px;opacity:1;}
+
+.d_btn_right{top:-150px;height:10px;width:2px;right:0;}
+.h_btn_left:hover .d_btn_right{top:0;right:0;height:40px;opacity:1;}
+
+.d_btn_bottom{left:150px;width:50px;height:2px;bottom:0;}
+.h_btn_left:hover .d_btn_bottom{bottom:0;left:0;width:140px;opacity:1;}
+
+.d_btn_left{top:150px;height:10px;width:2px;left:0;}
+.h_btn_left:hover .d_btn_left{top:0;left:0;height:40px;opacity:1;}
+
+.i_btn_top{left:-150px;width:50px;height:2px;top:0;}
+.h_btn_right:hover .i_btn_top{top:0;left:0;width:140px;opacity:1;}
+
+.i_btn_right{top:-150px;height:10px;width:2px;right:0;}
+.h_btn_right:hover .i_btn_right{top:0;right:0;height:40px;opacity:1;}
+
+.i_btn_bottom{left:150px;width:50px;height:2px;bottom:0;}
+.h_btn_right:hover .i_btn_bottom{bottom:0;left:0;width:140px;opacity:1;}
+
+.i_btn_left{top:150px;height:10px;width:2px;left:0;}
+.h_btn_right:hover .i_btn_left{top:0;left:0;height:40px;opacity:1;}
+
+.center{background:url(images/b95bb9aa6f066dc260cb99ef2e03e3a5.jpg) no-repeat;background-size:100% 100%;}
+.center ul{width:780px;margin:0 auto;margin-top:120px;}
+.center li{width:200px;height:200px;float:left;margin:30px;border-radius:50%;overflow:hidden; position:relative;}
+
+.center a{position:absolute; top:0; left:-250px; width:100%; height:100%; background:#fff; opacity:0.7; font-size:36px; text-align:center;line-height:200px;color:#000;font-weight:bold;font-family:'Microsoft Yahei';}
+.html{background:url(images/3617e4e0b765c9c3d97a1cf43d952e74.jpg) no-repeat;background-size:100% 100%;}
+.h5{background:url(images/5735972bd40735fa79fe3fd49a510fb30f24087a.jpg) no-repeat;background-size:100% 100%;}
+.js{background:url(images/ae4bd0160924ab180b18905a31fae6cd7b890b7a.jpg) no-repeat;background-size:100% 100%;}
+.mobile{background:url(images/f509ab18972bd407abc9a2907f899e510fb3097a.jpg) no-repeat;background-size:100% 100%;}
+.ajax{background:url(images/6b06d40735fae6cddbbada0c0bb30f2442a70f7a.jpg) no-repeat;background-size:100% 100%;}
+.jsonp{background:url(images/282a35fae6cd7b893f624bee0b2442a7d9330e7a.jpg) no-repeat;background-size:100%;}
+
+
+.about{background:url(images/bbc9316ac32d0f16fccab610a7dbca50.jpg) no-repeat;background-size:100% 100%;}
+.contact{background:url(images/e1ef582033b13606162aaec3bf24282a.jpg) no-repeat;background-size:100% 100%;}
+.contact div{text-align:center;color:tomato;font-size:34px;font-family:'Microsoft Yahei';border-bottom:2px solid tomato;padding-bottom:10px;width:250px;margin:0 auto;text-shadow:2px 2px 4px #fff,-2px -2px 4px #fff;margin-top:170px;margin-bottom:20px;}
+.contact ul li{display:none;}
+.contact p{text-align:center;color:tomato;font-size:24px;font-family:'Microsoft Yahei';text-shadow:1px 1px 2px #fff,-1px -1px 2px #fff;padding-top:10px;}
+.contact ol{width:72px;margin:0 auto;margin-top:20px;}
+.contact ol li{width:10px;height:10px;float:left;margin:5px;border:2px solid #fff;border-radius:50%;}
+.contact .contact_show{display:block;}
+.active{background:#fff;}
+.about{text-align:center;}
+.about h2{font-family:'Raleway-Regular', 'Microsoft Yahei'; letter-spacing:5px;font-weight:300;color:#000;font-size:36px; text-transform:uppercase;text-align:center;margin-top:50px;padding-bottom:20px;}
+.about p{font-family:'Raleway-Regular', 'Microsoft Yahei'; letter-spacing:5px;font-weight:300;color:#000;font-size:36px;text-align:center;padding:20px 0;}
+.about a{display:inline-block;width:150px;height:50px;text-align:center;line-height:50px;color:#fff;font-weight:bold;background:#399;font-size:30px;margin-top:70px;}
+.about a:hover{text-shadow:2px 2px 4px tomato,-2px -2px 4px tomato;}
+
+</style>
+<script src="javascripts/tween.js"></script>
+<script src="javascripts/swiper.min.js"></script>
+<script>
+    /*document.addEventListener("DOMContentLoaded", function() {
+        var oHd = document.querySelector("header");
+        var oSimShow = document.querySelector(".sim-show");
+        var oMe = document.querySelector(".me");
+        var oSha = oMe.querySelector(".shadow");
+        var oOther = document.querySelector(".others");
+        var oFace = document.querySelector(".face");
+        oHd.style.width = document.documentElement.clientWidth + "px";
+        oHd.style.height = document.documentElement.clientHeight + "px";
+        oHd.style.backgroundSize = document.documentElement.clientWidth + "px auto";
+        oOther.style.width = document.documentElement.clientWidth + "px";
+        oOther.style.height = document.documentElement.clientHeight + "px";
+        oOther.style.backgroundSize = document.documentElement.clientWidth + "px auto";
+        window.onresize = window.onscroll = function() {
+            var oHd = document.querySelector("header");
+            var oSimShow = document.querySelector(".sim-show");
+            oHd.style.width = document.documentElement.clientWidth + "px";
+            oHd.style.height = document.documentElement.clientHeight + "px";
+            oHd.style.backgroundSize = document.documentElement.clientWidth + "px auto";
+            oOther.style.width = document.documentElement.clientWidth + "px";
+            oOther.style.height = document.documentElement.clientHeight + "px";
+            oOther.style.backgroundSize = document.documentElement.clientWidth + "px auto";
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var scale = oMe.offsetTop - scrollTop;
+            oMe.style.backgroundPosition = "center " + (scale / 3 - 200) + "px";
+            oSha.style.opacity = 0.8 * (1 - scale / 200)
+        };
+        (function() {
+            var oUl = oMe.getElementsByTagName("ul")[0];
+            var oOl = oMe.getElementsByTagName("ol")[0];
+            var aLi = oUl.children;
+            var aBtn = oOl.children;
+            for (var i = 0; i < aBtn.length; i++) {
+                (function(index) {
+                    aBtn[i].onmouseover = function() {
+                        for (var i = 0; i < aBtn.length; i++) {
+                            aBtn[i].className = "";
+                            aLi[i].style.opacity = 0
+                        }
+                        aBtn[index].className = "on";
+                        aLi[index].style.opacity = 1
+                    }
+                })(i)
+            }
+        })();
+        (function() {
+            var oBtn = oHd.querySelector(".me-btn");
+            oBtn.onmouseover = function() {}
+        })()
+        }, false);*/
+		
+window.onload=function(){
+	
+	(function (){
+		new Swiper('.swiper-container',{
+		pagination: '.swiper-pagination',
+		direction: 'vertical',
+		mousewheelControl: true,
+		paginationClickable :true,
+		//loop: true,
+		//effect : 'flip',
+		});	
+	})();
+	
+	(function (){
+		var oUl=document.querySelector('.header_date');
+		var aSpan=oUl.getElementsByTagName('span');
+		var aLi=oUl.getElementsByTagName('li');
+		var H=aLi[0].offsetHeight;
+		time();
+		setInterval(function(){
+			
+			time();
+		},1000)
+		function time()
+		{
+			var oDate=new Date();
+			
+			var hour=toDub(oDate.getHours());
+			var minute=toDub(oDate.getMinutes());
+			var second=toDub(oDate.getSeconds());
+			str=hour+minute+second;
+			//alert(str.charAt(0));
+			
+			for(var i=0;i<aSpan.length;i++)
+			{
+				//alert(str.charAt(i));
+				//move(aSpan[i],{backgroundPosition:-H*(str.charAt(i))},{duration:50})
+				//aSpan[i].style.top=-H*(str.charAt(i))+'px';
+				
+				move(aSpan[i],{top:-H*(str.charAt(i))},{duration:500})
+			}	
+		}
+		function toDub(n)
+		{
+			return n<10?'0'+n:''+n;
+		}	
+	})();
+	
+	(function (){
+			var oUl=document.getElementById('h_nav');
+            var aLi=oUl.children;
+            var oBox=aLi[aLi.length-1]; 
+
+            var iNow=0;
+
+            for(var i=0; i<aLi.length-1; i++){
+                aLi[i].index=i;
+                aLi[i].onmouseover=function(){
+                    //oBox.style.left=this.offsetLeft+'px';
+                    eMove(oBox,this.offsetLeft);
+                };
+
+                aLi[i].onmouseout=function(){
+                    eMove(oBox,iNow*aLi[0].offsetWidth);
+                };
+
+                aLi[i].onclick=function(){
+                    iNow=this.index;
+                };
+            }	
+	})();
+	
+	(function (){
+		var oUl=document.getElementById('center');
+		var aLi=oUl.getElementsByTagName('li');
+		for (var i=0; i<aLi.length; i++)
+		{
+			aLi[i].onmouseenter=function (ev){
+				var oSpan=this.children[0];
+				var oEvent=ev || event;
+				var n=getN(oEvent, this);
+				
+				switch (n)
+				{
+					case 0:// right
+						oSpan.style.left='250px';
+						oSpan.style.top='0px';
+						
+						move(oSpan, {left:0});
+						break;
+						
+					case 1:// bttom
+						oSpan.style.left='0';
+						oSpan.style.top='250px';
+						
+						move(oSpan, {top:0});
+						break;
+						
+					case 2:// left
+						oSpan.style.left='-250px';
+						oSpan.style.top='0';
+						
+						move(oSpan, {left:0});
+						break;
+						
+					case 3:// top
+						oSpan.style.left='0';
+						oSpan.style.top='-250px';
+						
+						move(oSpan, {top:0});
+						break;
+				}
+			};
+			
+			aLi[i].onmouseleave=function (ev){
+				var oSpan=this.children[0];
+				var oEvent=ev || event;
+				var n=getN(oEvent, this);
+				switch (n)
+				{
+					case 0:// right
+						move(oSpan, {left:250});
+						break;
+						
+					case 1:// bttom
+						move(oSpan, {top:250});
+						break;
+						
+					case 2:// left
+						move(oSpan, {left:-250});
+						break;
+						
+					case 3:// top
+						move(oSpan, {top:-250});
+						break;
+				}
+			};
+		}
+		
+		
+		function getN(ev, oDiv)
+		{
+			var y=oDiv.offsetHeight/2+oDiv.offsetTop-ev.clientY;
+			var x=oDiv.offsetWidth/2+oDiv.offsetLeft-ev.clientX;
+			
+			var a=Math.atan2(y, x)*180/Math.PI;
+			var n=Math.round((a+180)/90)%4;
+			
+			return n;
+		}	
+	})();
+	
+	(function (){
+		var oUl=document.getElementById('about');
+		var oOl=document.getElementById('about_ac');	
+		var aLi=oUl.getElementsByTagName('li');
+		var acLi=oOl.getElementsByTagName('li');
+		
+		for (var i=0;i<acLi.length;i++)
+		{
+			acLi[i].index=i;
+			acLi[i].onmouseover=function (){
+				for (var i=0;i<acLi.length;i++)
+				{
+					move(aLi[i], {opacity:0},{duration:2000});
+					aLi[i].className='';
+					acLi[i].className='';
+				}
+				this.className='active';
+				aLi[this.index].className='contact_show';
+				move(aLi[this.index], {opacity:1},{duration:2000});
+			};
+		}
+	})();
+	
+};
+</script>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+		<div class="header animated bounceInDown swiper-slide" id="head">
+			<div class="header_top clearfix">
+				<div class="header_date">
+					<ul class="clearfix">
+						<li>
+							<span></span>
+						</li>
+						<li>
+							<span></span>
+						</li>
+						<li>:</li>
+						<li>
+							<span></span>
+						</li>
+						<li>
+							<span></span>
+						</li>
+						<li>:</li>
+						<li>
+							<span></span>
+						</li>
+						<li>
+							<span></span>
+						</li>
+					</ul>
+				</div>
+				<ul class="header_nav" id="h_nav">
+					<li><a href="javascript:;">首页</a></li>
+					<li><a href="javascript:;">H5作品</a></li>
+					<li><a href="javascript:;">JS作品</a></li>
+					<li><a href="javascript:;">个人简介</a></li>
+					<li><a href="javascript:;">联系方式</a></li>
+					<li class="header_box"></li>
+				</ul>
+			</div>
+			<div class="header_center">
+				<div class="h_btn_left">
+					<a href="javascript:;">个人信息</a>
+					<span class="d_btn_top"></span>
+					<span class="d_btn_right"></span>
+					<span class="d_btn_bottom"></span>
+					<span class="d_btn_left"></span>
+				</div>
+				<div class="h_center_img"></div>
+				<p class="header_title">web前端攻城狮</p>	
+				<div class="h_btn_right">
+					<a href="javascript:;">作品展示</a>
+					<span class="i_btn_top"></span>
+					<span class="i_btn_right"></span>
+					<span class="i_btn_bottom"></span>
+					<span class="i_btn_left"></span>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-slide center">
+			<ul class="clearfix" id="center">
+				<li class="html"><a href="work.html" target="_blank">html/css</a></li>
+				<li class="js"><a href="workjs.html" target="_blank">javascript</a></li>
+				<li class="h5"><a href="javascript:;" target="_blank">H5/CSS3</a></li>
+				<li class="mobile"><a href="mobile.html" target="_blank">Mobile</a></li>
+				<li class="ajax"><a href="ajax.html" target="_blank">ajax</a></li>
+				<li class="jsonp"><a href="jsonp.html" target="_blank">jsonp</a></li>
+			</ul>
+		</div>
+		
+		<div class="swiper-slide contact">
+			<div>ABOUT ME</div>
+			<ul id="about">
+				<li class="contact_show">
+					<p>熟练掌握HTML5、CSS3、JavaScript开发</p>
+					<p>熟悉W3C标准与ES规范，熟悉Web语义化</p>
+					<p>熟练掌握盒模型、常用布局以及浏览器和移动设备兼容性</p>
+					<p>有相关网站构建和调试经验，良好的责任心和学习能力，新知识理解快，乐于分享</p>
+					<p>热爱coding</p>
+				</li>
+				<li>
+					<p>能用原生js进行复杂页面的开发</p>
+					<p>熟练运用原生js编写ajax和jsonp函数，进行普通交互和跨域交互</p>
+					<p>同时熟悉jQuery快速开发PC端也面以及运用zepto开发移动端页面</p>
+					<p>思路清晰，思维灵活，能根据不同情况运用不同方法</p>
+					<p>熟悉Linux命令和SQL语句</p>
+				</li>
+				<li>
+					<p>熟悉面向对象思想，能运用面向对象进行开发</p>
+					<p>熟悉HTML5的canvas、svg，能够运用canvas和raphaeljs进行图标制作</p>
+					<p>同时熟悉jQuery快速开发PC端也面以及运用zepto开发移动端页面</p>
+					<p>了解MVC思想，了解angularjs的简单应用</p>
+					<p>熟悉C、Python、PHP、Nodejs，对后台也抱有浓厚兴趣</p>
+				</li>
+			</ul>
+			<ol class="clearfix" id="about_ac">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+			</ol>
+		</div>
+		<div class="swiper-slide about">
+			<h2>Please contact me</h2>
+			<p>TEL: 18739307315</p>
+			<p>QQ: 374214809</p>
+			<p>EMAil: ng_zhangxiaokun@163.com</p>
+
+		</div>
+	</div>
+    <div class="swiper-pagination"></div>
+</div>
+
+</body>
+</html>
